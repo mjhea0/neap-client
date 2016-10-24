@@ -2,6 +2,8 @@
 
 This is the client-side of our NEAP App. It consumes data from the server. It's Angular.
 
+http://mherman.org/neap-client/#/coffee
+
 ## Development
 
 1. Create a new component

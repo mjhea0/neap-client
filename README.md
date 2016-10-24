@@ -13,3 +13,9 @@ This is the client-side of our NEAP App. It consumes data from the server. It's 
 1. Add `access-control` header check to server
 1. Controller
   - update the view
+
+## Deployment
+
+```
+$ git subtree push --prefix src origin gh-pages
+```

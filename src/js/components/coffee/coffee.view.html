@@ -1,5 +1,68 @@
-<ul>
-  <li ng-repeat="coffee in coffeeCtrl.coffee">
-    {{coffee.name}}
-  </li>
-</ul>
+<h1>All Coffees</h1>
+<hr>
+
+<button ng-click="coffeeCtrl.showForm()" class="btn btn-success">Add Coffee</button>
+
+<br><br><br>
+
+<div ng-if="coffeeCtrl.form">
+  <div class="col-md-4">
+    <form ng-submit="coffeeCtrl.addCoffee()">
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" ng-model="coffeeCtrl.coffeeObj.name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="roaster" ng-model="coffeeCtrl.coffeeObj.roaster" placeholder="Roaster" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="origin" ng-model="coffeeCtrl.coffeeObj.origin" placeholder="Origin" required>
+      </div>
+      <div class="form-group">
+        <label>Roast:</label>
+        <select class="form-control" ng-model="coffeeCtrl.coffeeObj.roast" required>
+          <option>Dark</option>
+          <option>Medium</option>
+          <option>Light</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="caffeine" ng-model="coffeeCtrl.coffeeObj.caffeine" placeholder="Caffeine" required>
+      </div>
+      <div class="form-group">
+        <label>Decaf:</label>
+        <select class="form-control" ng-model="coffeeCtrl.coffeeObj.decaf" required>
+          <option>true</option>
+          <option>false</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="price" ng-model="coffeeCtrl.coffeeObj.price" placeholder="Price" required>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Coffee Quantity</label>
+        <input type="number" class="form-control" id="quantity" ng-model="coffeeCtrl.coffeeObj.quantity" placeholder="Quantity" required>
+      </div>
+      <button type="submit" class="btn btn-default">Add</button>
+    </form>
+    <br><br><br><br>
+  </div>
+</div>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Roaster</th>
+    <th>Origin</th>
+    <th>Roast</th>
+    <th>Caffeine</th>
+    <th>Decaf</th>
+  </tr>
+  <tr ng-repeat="coffee in coffeeCtrl.coffee">
+    <td>{{coffee.name}}</td>
+    <td>{{coffee.roaster}}</td>
+    <td>{{coffee.origin}}</td>
+    <td>{{coffee.roast}}</td>
+    <td>{{coffee.caffeine}}</td>
+    <td>{{coffee.decaf}}</td>
+  </tr>
+</table>
